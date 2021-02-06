@@ -2,52 +2,56 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <title>Send A Song</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <title>Send A Song</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body>
-    <header>
+    <header class="sendASong">
         <div class="backIcon">
             <img src="images/home.png" class="headerIcon"/>
         </div>
         <h1>
             Send A Song
         </h1>
-
     </header>
+
     <div class="mainSection">
         <div class="songInputSection">            
-            <input type="text" id="titleOfSound" name="titleOfSound" placeholder="Untitled Song">
-            <div class="boxSelection">
-                <select name="sendToBox" id="sendToBox">
-                    <option value="momsBox">Mom's Music Box</option>
-                    <option value="grandmasBox">Grandma Jean's Music Box</option>
-                    <option value="katiesBox">Cousin Katie's Music Box</option>
-                    <option value="petesBox">My Friend Pete's Music Box</option>
-                    <option value="dadsBox">Dad's Music Box</option>
-                </select>
-            </div>
-            <div class="saveButton">
-                <img src="images/save.png">
-                <p>save</p>
+            <input class="inputText" type="text" id="titleOfSound" name="titleOfSound" placeholder="Untitled Song">
+            <div class="containFlex">
+                <div class="boxSelection">
+                    <select name="sendToBox" id="sendToBox">
+                        <option value="momsBox">Mom's Music Box</option>
+                        <option value="grandmasBox">Grandma Jean's Music Box</option>
+                        <option value="katiesBox">Cousin Katie's Music Box</option>
+                        <option value="petesBox">My Friend Pete's Music Box</option>
+                        <option value="dadsBox">Dad's Music Box</option>
+                    </select>
+                </div>
+                <div class="saveButton">
+                    <img src="images/save.png">
+                    <p class="save">save</p>
+                </div>
             </div>
         </div>
-        <div class="soundOptionsSection">
-            <img src="images/record_selected.png">
-            <img src="images/make_selected.png">
-            <img src="images/songs_selected.png">
+        <div class="soundOptionsSection flexCenter">
+            <img class="recordImg" src="images/record_selected.png">
+            <img class="makeImg" src="images/make_selected.png">
+            <img class="songsImg" src="images/songs_selected.png">
         </div>
-        <div class="reviewMusicSubmit">
-            <p>bar for the length of the song</p>
-            <img src="images/backToBeginning.png">
-            <img src="images/playLarge.png">
-            <img src="images/pauseLarge.png"><br>
-            <button>Send to Mom's Music Box</button>
+        <div class="reviewMusicSubmit center">
+            <div class="soundBar flexCenter"></div>
+            <div class="flexCenter">
+                <img src="images/backToBeginning.png">
+                <img src="images/playLarge.png">
+                <img src="images/pauseLarge.png"><br>
+            </div>
+            <button class="sendToBox">Send to Mom's Music Box</button>
         </div>
     </div>
 

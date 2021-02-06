@@ -1,6 +1,7 @@
 body {
     background-image: linear-gradient(to bottom right, #0085FF, #FF27A9);
     font-family: 'Open Sans', sans-serif;
+    min-height: 100%;
 }
 
 header h1 {
@@ -11,6 +12,11 @@ header h1 {
 
 h2, h3, p {
     color: white;
+}
+
+.center {
+    text-align: center;
+    justify-content: center;
 }
 
 .headerIcon {
@@ -33,6 +39,8 @@ h2, h3, p {
 header {
     max-width: 1200px;
     margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,6 +48,8 @@ header {
 
 .mainSection {
     max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .newThingDiv {
@@ -61,3 +71,120 @@ header {
     border-radius: 5px;
     padding: 20px;
 }
+
+button {
+    width: 600px;
+    height: 60px;
+    background: #8ED000;
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/* Music Creation Section Specifc CSS ////////////////////////// */
+
+/* Header */
+header.sendASong {
+    justify-content: flex-start;
+}
+
+/* Input Section */
+
+.inputText {
+    display: flex;
+    background: rgba(255, 255, 255, 0.64);
+    width: 100%;
+    height: 60px;
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-size: 32px;
+    line-height: 38px;
+    color: #333333;
+    margin-bottom: 24px;
+}
+
+div.containFlex {
+    display: flex;
+    align-content: stretch;
+}
+
+div.boxSelection {
+    width: 100%;
+    margin-right: 24px;
+}
+
+select#sendToBox {
+    height: 60px;
+    width: 100%;
+    background: #8ED000;
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    color: #FFFFFF;
+}
+
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+
+p.save {
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Select a Sound Section */
+
+div.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img.recordImg, img.songsImg {
+    position: relative;
+    top: -40px;
+    margin: 24px;
+}
+
+/* Review Music and Submit Section */
+
+div.soundBar {
+    background: rgba(255, 255, 255, 0.28);
+    height: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.reviewMusicSubmit img {
+    margin: 12px;
+    margin-bottom: 48px;
+}
+
+button.sendToBox {
+    width: 100%;
+    margin-bottom: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
