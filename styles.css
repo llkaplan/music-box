@@ -14,6 +14,14 @@ h2, h3, p {
     color: white;
 }
 
+p.bold {
+    font-weight: bold;
+}
+
+.largerText {
+    font-size: 120%;
+}
+
 .center {
     text-align: center;
     justify-content: center;
@@ -132,17 +140,6 @@ select#sendToBox {
     color: #FFFFFF;
 }
 
-.select-selected:after {
-    position: absolute;
-    content: "";
-    top: 14px;
-    right: 10px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: #fff transparent transparent transparent;
-  }
-
 p.save {
     margin-top: 0;
     text-align: center;
@@ -156,7 +153,7 @@ div.flexCenter {
     align-items: center;
 }
 
-img.recordImg, img.songsImg {
+.recordImg, .songsImg {
     position: relative;
     top: -40px;
     margin: 24px;
@@ -165,14 +162,20 @@ img.recordImg, img.songsImg {
 /* Review Music and Submit Section */
 
 div.soundBar {
+    width: 16%;
     background: rgba(255, 255, 255, 0.28);
     height: 32px;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 200px;
     border: 3px solid #FFFFFF;
     box-sizing: border-box;
     border-radius: 8px;
+    margin-bottom: 64px;
+}
+
+input.soundBarIcons {
+    margin: 0 24px 50px 24px ;
 }
 
 .reviewMusicSubmit img {
@@ -188,3 +191,34 @@ button.sendToBox {
     width: 80%;
 }
 
+/* Songs Selection Section ///////////////////////////////////////// */
+
+div.songsSelection {
+    padding-top: 100px;
+    padding-bottom: 32px;
+}
+
+div.navArrow {
+    margin-left: 16px;
+    margin-right: 16px;
+    position: relative;
+    bottom: 24px;
+}
+div.songsUnselected {
+    width: 16%;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+div.songSelected {
+    width: 16%;
+    height: 217px;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-left: 24px;
+    margin-right: 24px;
+    border: 5px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 60px;
+}

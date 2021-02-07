@@ -21,6 +21,8 @@
     </header>
 
     <div class="mainSection">
+
+        <!-- Choose Who to Send It To -->
         <div class="songInputSection">            
             <input class="inputText" type="text" id="titleOfSound" name="titleOfSound" placeholder="Untitled Song">
             <div class="containFlex">
@@ -35,26 +37,71 @@
                 </div>
                 <div class="saveButton">
                     <img src="images/save.png">
-                    <p class="save">save</p>
+                    <p class="save">Save</p>
                 </div>
             </div>
         </div>
+
+        <!-- Sound Creation Options Section -->
         <div class="soundOptionsSection flexCenter">
-            <img class="recordImg" src="images/record_selected.png">
-            <img class="makeImg" src="images/make_selected.png">
-            <img class="songsImg" src="images/songs_selected.png">
+            <input class="recordImg" type="image" id="record_selected" alt="Record A Sound" src="images/record_unselected.png">
+            <input class="makeImg" type="image" id="make_selected" alt="Make A Song" src="images/make_unselected.png">
+            <input class="songsImg" type="image" id="songs_selected" alt="Send A Song" src="images/songs_unselected.png">
         </div>
+
+        <!-- Songs Selection Section -->
+        <div class="songsSelection flexCenter">
+            <div class="navArrow center">
+                <img src="images/left_arrow.png">
+            </div>
+            <div class="songsUnselected center">
+                <div>
+                    <img src="images/song_plug.png">
+                    <p>Super Mario 64</p>
+                </div>
+            </div>
+            <div class="songsUnselected center">
+                <div>
+                    <img src="images/song_bass.png">
+                    <p>Jingle Bells</p>
+                </div>
+            </div>
+            <div class="songSelected center flexCenter">
+                <div>
+                    <img src="images/song_keys.png">
+                    <p class="bold largerText">Star Wars</p>
+                </div>
+            </div>
+            <div class="songsUnselected center">
+                <div>
+                    <img src="images/song_party.png">
+                    <p>Happy Birthday</p>
+                </div>
+            </div>
+            <div class="songsUnselected center">
+                <div>
+                    <img src="images/song_bass.png">
+                    <p>Clair de Lune</p>
+                </div>
+            </div>
+            <div class="navArrow">
+                <img src="images/right_arrow.png">
+            </div>
+        </div>
+
+        <!-- Review Submit Section -->
         <div class="reviewMusicSubmit center">
             <div class="soundBar flexCenter"></div>
-            <div class="flexCenter">
-                <img src="images/backToBeginning.png">
-                <img src="images/playLarge.png">
-                <img src="images/pauseLarge.png"><br>
-            </div>
+                <div class="flexCenter">
+                    <input class="soundBarIcons backToBeginning" type="image" id="backToBeginning" alt="Go back to beginning" src="images/backToBeginning.png">
+                    <input class="soundBarIcons playLarge" type="image" id="playLarge" alt="Play the Sound" src="images/playLarge.png">
+                    <input class="soundBarIcons pauseLarge" type="image" id="pauseLarge" alt="Pause the song" src="images/pauseLarge.png"><br>
+                </div>
             <button class="sendToBox">Send to Mom's Music Box</button>
         </div>
     </div>
 
-  <script src="js/scripts.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
