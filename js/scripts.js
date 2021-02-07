@@ -69,3 +69,34 @@ $(function(){
     }
     });
   });
+
+let parentClass;
+
+//Changes colors of buttons
+
+$(".keyboard-button").click(function(){
+
+    let parentClass = this.closest("div").className;
+
+    if (parentClass == "c-scale") {
+        this.style.backgroundColor = "#266DD3";
+    } else if (parentClass == "d-scale") {
+        this.style.backgroundColor = "#C5DCA0";
+    } else if (parentClass == "e-scale") {
+        this.style.backgroundColor = "#F5F2B8";
+    } else if (parentClass == "f-scale") {
+        this.style.backgroundColor = "#EF6F6C";
+    } else if (parentClass == "g-scale") {
+        this.style.backgroundColor = "#FFA770";
+    } else if (parentClass == "a-scale") {
+        this.style.backgroundColor = "#820263";
+    } else if (parentClass == "b-scale") {
+        this.style.backgroundColor = "#FFAFD8";
+    } else if (parentClass == "c-scale-2nd") {
+        this.style.backgroundColor = "#06BEE1";
+    };
+
+
+   console.log(parentClass);
+
+  });
