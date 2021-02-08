@@ -147,6 +147,53 @@ function updateSongInPlayer(songSoundFile) {
     $( "#audioPlayer" ).attr("src", songSoundFile);
 }
 
+//adding in color changing to keyboard
+
+
+let parentClass;
+
+//Changes colors of buttons
+
+$(".keyboard-button").click(function(){
+
+    let parentClass = this.closest("div").className;
+    let isSelected = $(this).hasClass( "selected" );
+    
+
+    if(isSelected == true) {
+      $(this).removeClass("selected");
+      this.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+    }  else if (parentClass == "c-scale") {
+        this.style.backgroundColor = "#266DD3";
+        $(this).addClass("selected");
+    } else if (parentClass == "d-scale") {
+        this.style.backgroundColor = "#C5DCA0";
+        $(this).addClass("selected");
+    } else if (parentClass == "e-scale") {
+        this.style.backgroundColor = "#F5F2B8";
+        $(this).addClass("selected");
+    } else if (parentClass == "f-scale") {
+        this.style.backgroundColor = "#EF6F6C";
+        $(this).addClass("selected");
+    } else if (parentClass == "g-scale") {
+        this.style.backgroundColor = "#FFA770";
+        $(this).addClass("selected");
+    } else if (parentClass == "a-scale") {
+        this.style.backgroundColor = "#820263";
+        $(this).addClass("selected");
+    } else if (parentClass == "b-scale") {
+        this.style.backgroundColor = "#FFAFD8";
+        $(this).addClass("selected");
+    } else if (parentClass == "c-scale-2nd") {
+        this.style.backgroundColor = "#06BEE1";
+        $(this).addClass("selected");
+    };
+    console.log(parentClass);
+    console.log(this);
+  });
+
+
+   
 
 // createARegularSongDiv(songs[0], songDivs[0]);
 // createARegularSongDiv(songs[2], songDivs[1]);
@@ -198,4 +245,4 @@ function updateSongInPlayer(songSoundFile) {
 //     }
   
 //   }
-
+//
