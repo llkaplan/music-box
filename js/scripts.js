@@ -88,27 +88,24 @@ $( "#sendToBox" )
 
 // Rotating Song Selector
 
+// VARIABLES
 var songs = ["Super Mario 64", "Jingle Bells", "Star Wars", "Happy Birthday", "Clair de Lune"];
 var songDivs = ["#songDiv0", "#songDiv1", "#songDiv2", "#songDiv3", "#songDiv4"];
+var divClass = ["song0", "song1", "song2", "song3", "song4"];
 var songImgCode = ['images/song_plug.png', 'images/song_bass.png', 'images/song_keys.png', 'images/song_party.png', 'images/song_bass.png'];
 var songSoundFile = ['sounds/clairDeLune.mp3', 'sounds/starWarsMainTheme.mp3', 'sounds/superMarioBros.mp3', 'sounds/starWarsMainTheme.mp3', 'sounds/superMarioBros.mp3'];
-
+var currentSelectedSong = 2;
 
 function getSongName(song) {
     if (song == songs[0]) {
-        console.log(songs[0]);
         return songs[0];
     } else if (song == songs[1]) {
-        console.log(songs[1]);
         return songs[1];
     } else if (song == songs[2]) {
-        console.log(songs[2]);
         return songs[2];
     } else if (song == songs[3]) {
-        console.log(songs[3]);
         return songs[3];
     } else if (song == songs[4]) {
-        console.log(songs[4]);
         return songs[4];
     }
 }
@@ -117,12 +114,10 @@ getSongName(songs[0]);
 
 function getSongImage(song) {
     if (song === songs[0]) {
-        console.log(song);
         return songImgCode[0];
     } else if  (song === songs[1]) {
         return songImgCode[1];
     } else if  (song === songs[2]) {
-        console.log(song);
         return songImgCode[2];
     } else if  (song === songs[3]) {
         return songImgCode[3];
@@ -131,26 +126,138 @@ function getSongImage(song) {
     }
 }
 
-function createARegularSongDiv(song, divNumber) {
-    $( divNumber ).empty();
-    $( divNumber ).append( "<img src='" + getSongImage(song) + "'>" );
-    $( divNumber ).append( "<p>" + getSongName(song) + "</p>" );
+function createARegularSongDiv(i, stationaryDiv) {
+  var song = songs[i];
+  var theDivClass = divClass[i];
+  var songDivIds = songDivs[stationaryDiv];
+
+  $( songDivIds ).empty();
+  $( songDivIds ).append( "<img src='" + getSongImage(song) + "'>" );
+  $( songDivIds ).append( "<p>" + getSongName(song) + "</p>" );
+
+  $( songDivIds ).removeClass();
+  $( songDivIds ).addClass( theDivClass );
 }
 
-function createMiddleSongDiv(song) {
-    $( songDiv2 ).empty();
-    $( songDiv2 ).append( "<img src='" + getSongImage(song) + "'>" );
-    $( songDiv2 ).append( "<p class='bold'>" + getSongName(song) + "</p>" );
+function createMiddleSongDiv(i, stationaryDiv) {
+  var song = songs[i];
+  var theDivClass = divClass[i];
+  var songDivIds = songDivs[stationaryDiv];
+
+  $( songDivIds ).empty();
+  $( songDivIds ).append( "<img src='" + getSongImage(song) + "'>" );
+  $( songDivIds ).append( "<p class='bold'>" + getSongName(song) + "</p>" );
+
+  $( songDivIds ).removeClass();
+  $( songDivIds ).addClass( theDivClass );
+
+  currentSelectedSong = i;
+  console.log(currentSelectedSong);
+
+// REMOVE EVENT LISTENERS
+
+// ADD EVENT LISTENERS BACK IN.
+
 }
 
-function updateSongInPlayer(songSoundFile) {
-    $( "#audioPlayer" ).attr("src", songSoundFile);
+function updateSongInPlayer(soundFile) {
+    $( "#audioPlayer" ).attr("src", soundFile);
+    console.log("replaced song" + soundFile);
 }
 
+// function updateSongInPlayer( songSoundFile[0] );
+function updateSongSelectorPerm0() {
+  console.log("Called perm0");
+// position 0
+    createARegularSongDiv(3, 0);
+// position 1
+    createARegularSongDiv(4, 1);
+// position 2 - main position
+    createMiddleSongDiv(0, 2);
+// position 3
+    createARegularSongDiv(1, 3);
+// position 4
+    createARegularSongDiv(2, 4);
+}
+function updateSongSelectorPerm1() {
+// position 0
+    createARegularSongDiv(4, 0);
+// position 1
+    createARegularSongDiv(0, 1);
+// position 2 - main position
+    createMiddleSongDiv(1, 2);
+// position 3
+    createARegularSongDiv(2, 3);
+// position 4
+    createARegularSongDiv(3, 4);
+}
+function updateSongSelectorPerm2() {
+// position 0
+    createARegularSongDiv(0, 0);
+// position 1
+    createARegularSongDiv(1, 1);
+// position 2 - main position
+    createMiddleSongDiv(2, 2);
+// position 3
+    createARegularSongDiv(3, 3);
+// position 4
+    createARegularSongDiv(4, 4);
+}
+function updateSongSelectorPerm3() {
+// position 0
+    createARegularSongDiv(1, 0);
+// position 1
+    createARegularSongDiv(2, 1);
+// position 2 - main position
+    createMiddleSongDiv(3, 2);
+// position 3
+    createARegularSongDiv(4, 3);
+// position 4
+    createARegularSongDiv(0, 4);
+}
+function updateSongSelectorPerm4() {
+// position 0
+    createARegularSongDiv(2, 0);
+// position 1
+    createARegularSongDiv(3, 1);
+// position 2 - main position
+    createMiddleSongDiv(4, 2);
+// position 3
+    createARegularSongDiv(0, 3);
+// position 4
+    createARegularSongDiv(1, 4);
+}
 
-// createARegularSongDiv(songs[0], songDivs[0]);
-// createARegularSongDiv(songs[2], songDivs[1]);
-// createARegularSongDiv(songs[4], songDivs[3]);
+$( ".song0" ).click(function() {
+  updateSongSelectorPerm0();
+});
+$( ".song1" ).click(function() {
+  updateSongSelectorPerm1();
+});
+$( ".song2" ).click(function() {
+  updateSongSelectorPerm2();
+});
+$( ".song3" ).click(function() {
+  updateSongSelectorPerm3();
+});
+$( ".song4" ).click(function() {
+  updateSongSelectorPerm4();
+});
+
+
+// updateSongSelectorPerm0();
+// updateSongSelectorPerm1();
+// updateSongSelectorPerm2();
+// updateSongSelectorPerm3();
+// updateSongSelectorPerm4();
+
+
+
+
+
+
+
+// TRASH ////////////////////////////////
 
 // createMiddleSongDiv(songs[4]);
 
