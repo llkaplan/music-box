@@ -14,9 +14,7 @@
 
 <body>
     <header class="sendASong">
-        <div class="backIcon">
-            <img src="images/home.png" class="headerIcon"/>
-        </div>
+        <img class="backIcon" src="images/backButton.png"/>
         <h1>
             Send A Song
         </h1>
@@ -52,36 +50,36 @@
         </div>
 
         <!-- Songs Selection Section -->
-        <div class="songsSelection flexCenter">
+        <div id="songDivMain" class="songsSelection flexCenter">
             <div class="navArrow center">
                 <img src="images/left_arrow.png">
             </div>
             <div class="songsUnselected center">
-                <div>
+                <div id="songDiv0">
                     <img src="images/song_plug.png">
                     <p>Super Mario 64</p>
                 </div>
             </div>
             <div class="songsUnselected center">
-                <div>
+                <div id="songDiv1">
                     <img src="images/song_bass.png">
                     <p>Jingle Bells</p>
                 </div>
             </div>
             <div class="songSelected center flexCenter">
-                <div>
+                <div id="songDiv2" style="position: relative;">
                     <img src="images/song_keys.png">
                     <p class="bold largerText">Star Wars</p>
                 </div>
             </div>
             <div class="songsUnselected center">
-                <div>
+                <div id="songDiv3">
                     <img src="images/song_party.png">
                     <p>Happy Birthday</p>
                 </div>
             </div>
             <div class="songsUnselected center">
-                <div>
+                <div id="songDiv4">
                     <img src="images/song_bass.png">
                     <p>Clair de Lune</p>
                 </div>
@@ -91,21 +89,19 @@
             </div>
         </div>
 
+        <figure style="margin-top: 0px;" class="center">
+            <audio id="audioPlayer" controls src="sounds/superMarioBros.mp3"> Your browser does not support the <code>audio</code> element.
+            </audio>
+        </figure>
+
         <!-- Review Submit Section -->
         <div class="reviewMusicSubmit center">
-            <div class="soundBar flexCenter"></div>
-<<<<<<< HEAD
-                <div class="flexCenter">
-                    <input class="soundBarIcons backToBeginning" type="image" id="backToBeginning" alt="Go back to beginning" src="images/backToBeginning.png">
-                    <input class="soundBarIcons playLarge" type="image" id="playLarge" alt="Play the Sound" src="images/playLarge.png">
-                    <input class="soundBarIcons pauseLarge" type="image" id="pauseLarge" alt="Pause the song" src="images/pauseLarge.png"><br>
-                </div>
-=======
-            <div class="flexCenter">
+            <!-- <div class="soundBar flexCenter"></div> -->
+            <!-- <div class="flexCenter">
                 <img src="images/backToBeginning.png">
                 <img src="images/playLarge.png">
                 <img src="images/pauseLarge.png"><br>
-            </div>
+            </div> -->
             <div class="keyboard">
                 <div class="c-scale">
                     <button type="button" class="c1 keyboard-button"></button>
@@ -189,8 +185,7 @@
                 </div>
             </div>
         
->>>>>>> 395a01a68b82d0c6882fe638c6202ccbbd6afa85
-            <button class="sendToBox">Send to Mom's Music Box</button>
+            <button id="sendToBoxButton" class="sendToBoxButton">Send to Mom's Music Box</button>
         </div>
     </div>
 
