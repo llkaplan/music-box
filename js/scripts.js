@@ -73,8 +73,7 @@ $(function(){
   });
 
 
-// Take Select Value and Add to Box
-
+// Take Select Value and Add to Box Button at the Bottom
 $( "#sendToBox" )
     .change(function () {
         var str = "";
@@ -110,8 +109,6 @@ function getSongName(song) {
     }
 }
 
-getSongName(songs[0]);
-
 function getSongImage(song) {
     if (song === songs[0]) {
         return songImgCode[0];
@@ -126,6 +123,7 @@ function getSongImage(song) {
     }
 }
 
+// Creates the regular song divs
 function createARegularSongDiv(i, stationaryDiv) {
   var song = songs[i];
   var theDivClass = divClass[i];
@@ -139,6 +137,7 @@ function createARegularSongDiv(i, stationaryDiv) {
   $( songDivIds ).addClass( theDivClass );
 }
 
+// Creates the middle "focused" song div
 function createMiddleSongDiv(i, stationaryDiv) {
   var song = songs[i];
   var theDivClass = divClass[i];
@@ -153,11 +152,6 @@ function createMiddleSongDiv(i, stationaryDiv) {
 
   currentSelectedSong = i;
   console.log(currentSelectedSong);
-
-// REMOVE EVENT LISTENERS
-
-// ADD EVENT LISTENERS BACK IN.
-
 }
 
 function updateSongInPlayer(soundFile) {
@@ -165,9 +159,8 @@ function updateSongInPlayer(soundFile) {
     console.log("replaced song" + soundFile);
 }
 
-// function updateSongInPlayer( songSoundFile[0] );
+// Puts DIVs in their Positions
 function updateSongSelectorPerm0() {
-  console.log("Called perm0");
 // position 0
     createARegularSongDiv(3, 0);
 // position 1
@@ -228,37 +221,91 @@ function updateSongSelectorPerm4() {
     createARegularSongDiv(1, 4);
 }
 
-$( ".song0" ).click(function() {
+// Listens for Click Events and runs the functions
+$( "#songDivMain" ).on("click", ".song0", function() {
+  console.log("0 clicked");
   updateSongSelectorPerm0();
 });
-$( ".song1" ).click(function() {
+$( "#songDivMain" ).on("click", ".song1",  function() {
   updateSongSelectorPerm1();
 });
-$( ".song2" ).click(function() {
+$( "#songDivMain" ).on("click", ".song2",  function() {
   updateSongSelectorPerm2();
 });
-$( ".song3" ).click(function() {
+$( "#songDivMain" ).on("click", ".song3",  function() {
   updateSongSelectorPerm3();
 });
-$( ".song4" ).click(function() {
+$( "#songDivMain" ).on("click", ".song4",  function() {
   updateSongSelectorPerm4();
 });
 
+// Adds Functionality to Right and Left arrows
+function rightArrowSelectSong() {
+  console.log(currentSelectedSong);
+  if (currentSelectedSong === 0) {
+      updateSongSelectorPerm1();
+      currentSelectedSong = 1;
+  } else if (currentSelectedSong === 1) {
+      updateSongSelectorPerm2();
+      currentSelectedSong = 2;
+  } else if (currentSelectedSong === 2) {
+      updateSongSelectorPerm3();
+      currentSelectedSong = 3;
+  } else if (currentSelectedSong === 3) {
+      updateSongSelectorPerm4();
+      currentSelectedSong = 4;
+  } else if (currentSelectedSong === 4) {
+      updateSongSelectorPerm0();
+      currentSelectedSong = 0;
+  }
+}
 
-// updateSongSelectorPerm0();
-// updateSongSelectorPerm1();
-// updateSongSelectorPerm2();
-// updateSongSelectorPerm3();
-// updateSongSelectorPerm4();
+function leftArrowSelectSong() {
+  console.log(currentSelectedSong);
+  if (currentSelectedSong === 0) {
+      updateSongSelectorPerm4();
+      currentSelectedSong = 4;
+  } else if (currentSelectedSong === 1) {
+      updateSongSelectorPerm0();
+      currentSelectedSong = 0;
+  } else if (currentSelectedSong === 2) {
+      updateSongSelectorPerm1();
+      currentSelectedSong = 1;
+  } else if (currentSelectedSong === 3) {
+      updateSongSelectorPerm2();
+      currentSelectedSong = 2;
+  } else if (currentSelectedSong === 4) {
+      updateSongSelectorPerm3();
+      currentSelectedSong = 3;
+  }
+}
+
+// Calls the arrow functions on click
+$( "#songDivMain" ).on("click", ".rightSongArrow", function() {
+  rightArrowSelectSong();
+});
+$( "#songDivMain" ).on("click", ".leftSongArrow", function() {
+  leftArrowSelectSong();
+});
 
 
-
+function getSongImage(song) {
+  if (song === songs[0]) {
+      return songImgCode[0];
+  } else if  (song === songs[1]) {
+      return songImgCode[1];
+  } else if  (song === songs[2]) {
+      return songImgCode[2];
+  } else if  (song === songs[3]) {
+      return songImgCode[3];
+  } else if  (song === songs[4]) {
+      return songImgCode[4];
+  }
+}
 
 
 
 //adding in color changing to keyboard
-
-
 let parentClass;
 
 //Changes colors of buttons
@@ -305,51 +352,3 @@ $(".keyboard-button").click(function(){
    
 
 // TRASH ////////////////////////////////
-
-// createMiddleSongDiv(songs[4]);
-
-    // var theDiv = $("#songDivMain");
-    // var classes = "songsUnselected center";
-    // var textClass = "";
-
-    // for (i = 0; i < songs.length; ++i) {
-    //     classes = "songSelected center flexCenter";
-    //     textClass = "bold largerText";
-    // }
-
-    // var songDiv = $('<div></div>');
-    // songDiv.addClass(classes);
-    // var innerDiv = $('<div></div>');
-    // innerDiv.append( getSongImage(song) );
-    // innerDiv.append("<p>" + getSongName(song) + "</p>");
-
-
-
-
-
-// $( ".container" ).append( $( "h2" ) );
-
-//     var thediv = $(“#songDivMain”); // get the parent div
-//     thediv.empty(); // remove all children
-//     var classes = "songsUnselected center"; // default classes
-//     var textClass = "";
-  
-//     for (int i=0; i<songs.length; ++i) {
-//       var song = songs[i];
-//       if (i === 2) {
-//           classes = "songSelected center flexCenter";
-//           textClass = "bold largerText";
-//       }
-      
-//       // Create a div
-//       var songDiv = $('<div></div>');
-//       songDiv.appendClass(classes);
-//       var innerDiv = $('<div></div>');
-//       innerDiv.append("<img src=" + getSongImage(song) + "/>");
-//       innerDiv.append("<p
-  
-  
-//     }
-  
-//   }
-//
