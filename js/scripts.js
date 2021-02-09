@@ -305,10 +305,11 @@ function getSongImage(song) {
 
 
 
-//adding in color changing to keyboard
+//adding in color changing to keyboard and sounds
+//NEED TO GET ANOTHER 2ND C NOTE IT"S WRONG
 let parentClass;
-
-//Changes colors of buttons
+let noteAudio;
+//Changes colors of buttons and selects sound
 
 $(".keyboard-button").click(function(){
 
@@ -321,34 +322,48 @@ $(".keyboard-button").click(function(){
       this.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
     }  else if (parentClass == "c-scale") {
         this.style.backgroundColor = "#266DD3";
+        var noteAudio = document.getElementById("cNote");
+        noteAudio.play();
         $(this).addClass("selected");
     } else if (parentClass == "d-scale") {
         this.style.backgroundColor = "#C5DCA0";
+        var noteAudio = document.getElementById("dNote");
+        noteAudio.play();
         $(this).addClass("selected");
     } else if (parentClass == "e-scale") {
         this.style.backgroundColor = "#F5F2B8";
+        var noteAudio = document.getElementById("eNote");
+        noteAudio.play();
         $(this).addClass("selected");
     } else if (parentClass == "f-scale") {
         this.style.backgroundColor = "#EF6F6C";
+        var noteAudio = document.getElementById("fNote");
+        noteAudio.play();
         $(this).addClass("selected");
     } else if (parentClass == "g-scale") {
         this.style.backgroundColor = "#FFA770";
+        var noteAudio = document.getElementById("gNote");
+        noteAudio.play();
         $(this).addClass("selected");
     } else if (parentClass == "a-scale") {
         this.style.backgroundColor = "#820263";
+        var noteAudio = document.getElementById("aNote");
+        noteAudio.play();
         $(this).addClass("selected");
     } else if (parentClass == "b-scale") {
         this.style.backgroundColor = "#FFAFD8";
+        var noteAudio = document.getElementById("bNote");
+        noteAudio.play();
         $(this).addClass("selected");
     } else if (parentClass == "c-scale-2nd") {
         this.style.backgroundColor = "#06BEE1";
+        var noteAudio = document.getElementById("cNote");
+        noteAudio.play();
         $(this).addClass("selected");
     };
-    console.log(parentClass);
-    console.log(this);
+
   });
 
 
-   
 
 // TRASH ////////////////////////////////
