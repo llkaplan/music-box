@@ -94,6 +94,7 @@ var divClass = ["song0", "song1", "song2", "song3", "song4"];
 var songImgCode = ['images/song_plug.png', 'images/song_bass.png', 'images/song_keys.png', 'images/song_party.png', 'images/song_bass.png'];
 var songSoundFile = ['sounds/clairDeLune.mp3', 'sounds/starWarsMainTheme.mp3', 'sounds/superMarioBros.mp3', 'sounds/starWarsMainTheme.mp3', 'sounds/superMarioBros.mp3'];
 var currentSelectedSong = 2;
+const currentSong = ["c1", "d1", "e1", "f1", "g1", "a1", "b1", "c1"];
 
 function getSongName(song) {
     if (song == songs[0]) {
@@ -363,6 +364,13 @@ $(".keyboard-button").click(function(){
     };
 
   });
+
+$("#sendToBoxButton").click(function() {
+  console.log(firebase);
+  firebase.database().ref('song').set({
+    notes: currentSong,
+  });
+})
 
 
 

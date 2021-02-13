@@ -199,14 +199,13 @@
         </div>
     </div>
 
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/scripts.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
 
     <script>
     // Your web app's Firebase configuration
@@ -218,12 +217,16 @@
         storageBucket: "music-box-034.appspot.com",
         messagingSenderId: "343224657184",
         appId: "1:343224657184:web:c8a98d4e32d7f70484a345",
-        measurementId: "G-TSCST12VDB"
+        measurementId: "G-TSCST12VDB",
+        databaseUrl: "https://music-box-034-default-rtdb.firebaseio.com/"
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
     </script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+    
 
 </body>
 </html>
