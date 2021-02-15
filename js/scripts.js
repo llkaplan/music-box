@@ -310,58 +310,100 @@ function getSongImage(song) {
 //NEED TO GET ANOTHER 2ND C NOTE IT"S WRONG
 let parentClass;
 let noteAudio;
+let newSong = ['blank', 'blank', 'blank', 'blank', 'blank', 'blank', 'blank', 'blank'];
 //Changes colors of buttons and selects sound
 
 $(".keyboard-button").click(function(){
 
     let parentClass = this.closest("div").className;
+    let firstLetter = parentClass.charAt(0); // alerts 's'
     let isSelected = $(this).hasClass( "selected" );
     
 
     if(isSelected == true) {
       $(this).removeClass("selected");
       this.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
-    }  else if (parentClass == "c-scale") {
+    }  else if (parentClass == "C-scale") {
         this.style.backgroundColor = "#266DD3";
         var noteAudio = document.getElementById("cNote");
         noteAudio.play();
         $(this).addClass("selected");
-    } else if (parentClass == "d-scale") {
+    } else if (parentClass == "D-scale") {
         this.style.backgroundColor = "#C5DCA0";
         var noteAudio = document.getElementById("dNote");
         noteAudio.play();
         $(this).addClass("selected");
-    } else if (parentClass == "e-scale") {
+    } else if (parentClass == "E-scale") {
         this.style.backgroundColor = "#F5F2B8";
         var noteAudio = document.getElementById("eNote");
         noteAudio.play();
         $(this).addClass("selected");
-    } else if (parentClass == "f-scale") {
+    } else if (parentClass == "F-scale") {
         this.style.backgroundColor = "#EF6F6C";
         var noteAudio = document.getElementById("fNote");
         noteAudio.play();
         $(this).addClass("selected");
-    } else if (parentClass == "g-scale") {
+    } else if (parentClass == "G-scale") {
         this.style.backgroundColor = "#FFA770";
         var noteAudio = document.getElementById("gNote");
         noteAudio.play();
         $(this).addClass("selected");
-    } else if (parentClass == "a-scale") {
+    } else if (parentClass == "A-scale") {
         this.style.backgroundColor = "#820263";
         var noteAudio = document.getElementById("aNote");
         noteAudio.play();
         $(this).addClass("selected");
-    } else if (parentClass == "b-scale") {
+    } else if (parentClass == "B-scale") {
         this.style.backgroundColor = "#FFAFD8";
         var noteAudio = document.getElementById("bNote");
         noteAudio.play();
         $(this).addClass("selected");
-    } else if (parentClass == "c-scale-2nd") {
+    } else if (parentClass == "C-scale-2nd") {
         this.style.backgroundColor = "#06BEE1";
         var noteAudio = document.getElementById("cNote");
         noteAudio.play();
         $(this).addClass("selected");
     };
+
+
+
+  if ( $(this).hasClass( "first" ) == true ) {
+    newSong.splice(0, 1, firstLetter);
+    console.log(newSong);
+    } else if ( $(this).hasClass( "second" ) == true ) {
+        newSong.splice(1, 1, firstLetter);
+        console.log(newSong);
+    } else if ( $(this).hasClass( "third" ) == true ) {
+        newSong.splice(2, 1, firstLetter);
+        console.log(newSong);
+    } else if ( $(this).hasClass( "fourth" ) == true ) {
+        newSong.splice(3, 1, firstLetter);
+        console.log(newSong);
+    } else if ( $(this).hasClass( "fifth" ) == true ) {
+        newSong.splice(4, 1, firstLetter);
+        console.log(newSong);
+    } else if ( $(this).hasClass( "sixth" ) == true ) {
+        newSong.splice(5, 1, firstLetter);
+        console.log(newSong);
+    } else if ( $(this).hasClass( "seventh" ) == true ) {
+        newSong.splice(6, 1, firstLetter);
+        console.log(newSong);
+    } else if ( $(this).hasClass( "eighth" ) == true ) {
+        newSong.splice(7, 1, firstLetter);
+        console.log(newSong);
+    }
+
+  });
+
+  //adding in the music notes to the array to create song.
+  $(".music-creation-play-button").click(function(){ 
+
+    let playedAudio = newSong;
+    
+    const result = playedAudio.filter(x => x !== 'blank');
+    console.log(result);
+    
+
 
   });
 
