@@ -318,7 +318,39 @@ $(".keyboard-button").click(function(){
     let parentClass = this.closest("div").className;
     let firstLetter = parentClass.charAt(0); // alerts 's'
     let isSelected = $(this).hasClass( "selected" );
+
+//an ugly and huge chunk of code that makes sure that current button is the only one in its row selected
+
+    if (($(this).hasClass('first') == true) && ($(".first").hasClass('selected') == true)) {
+        $(".first").removeClass('selected');
+        $(".first").css("background-color","rgba(255, 255, 255, 0.3)");
+    } else if (($(this).hasClass('second') == true) && ($(".second").hasClass('selected') == true)){
+        $(".second").removeClass('selected');
+        $(".second").css("background-color","rgba(255, 255, 255, 0.3)");
+    } else if (($(this).hasClass('third') == true) && ($(".third").hasClass('selected') == true)){
+        $(".third").removeClass('selected');
+        $(".third").css("background-color","rgba(255, 255, 255, 0.3)");
+    } else if (($(this).hasClass('fourth') == true) && ($(".fourth").hasClass('selected') == true)){
+        $(".fourth").removeClass('selected');
+        $(".fourth").css("background-color","rgba(255, 255, 255, 0.3)");
+    } else if (($(this).hasClass('fifth') == true) && ($(".fifth").hasClass('selected') == true)){
+        $(".fifth").removeClass('selected');
+        $(".fifth").css("background-color","rgba(255, 255, 255, 0.3)");
+    } else if (($(this).hasClass('sixth') == true) && ($(".sixth").hasClass('selected') == true)){
+        $(".sixth").removeClass('selected');
+        $(".sixth").css("background-color","rgba(255, 255, 255, 0.3)");
+    } else if (($(this).hasClass('seventh') == true) && ($(".seventh").hasClass('selected') == true)){
+        $(".seventh").removeClass('selected');
+        $(".seventh").css("background-color","rgba(255, 255, 255, 0.3)");
+    } else if (($(this).hasClass('eighth') == true) && ($(".eighth").hasClass('selected') == true)){
+        $(".eighth").removeClass('selected');
+        $(".eighth").css("background-color","rgba(255, 255, 255, 0.3)");
+    }
     
+
+
+    //allSelected.forEach(element => console.log(element))
+
 
     if(isSelected == true) {
       $(this).removeClass("selected");
@@ -369,28 +401,21 @@ $(".keyboard-button").click(function(){
 
   if ( $(this).hasClass( "first" ) == true ) {
     newSong.splice(0, 1, firstLetter);
-    console.log(newSong);
     } else if ( $(this).hasClass( "second" ) == true ) {
         newSong.splice(1, 1, firstLetter);
-        console.log(newSong);
     } else if ( $(this).hasClass( "third" ) == true ) {
         newSong.splice(2, 1, firstLetter);
-        console.log(newSong);
+
     } else if ( $(this).hasClass( "fourth" ) == true ) {
         newSong.splice(3, 1, firstLetter);
-        console.log(newSong);
     } else if ( $(this).hasClass( "fifth" ) == true ) {
         newSong.splice(4, 1, firstLetter);
-        console.log(newSong);
     } else if ( $(this).hasClass( "sixth" ) == true ) {
         newSong.splice(5, 1, firstLetter);
-        console.log(newSong);
     } else if ( $(this).hasClass( "seventh" ) == true ) {
         newSong.splice(6, 1, firstLetter);
-        console.log(newSong);
     } else if ( $(this).hasClass( "eighth" ) == true ) {
         newSong.splice(7, 1, firstLetter);
-        console.log(newSong);
     }
 
   });
@@ -401,7 +426,6 @@ $(".keyboard-button").click(function(){
     let playedAudio = newSong;
     
     const result = playedAudio.filter(x => x !== 'blank');
-    console.log(result);
     
 
 
