@@ -397,26 +397,45 @@ $(".keyboard-button").click(function(){
         $(this).addClass("selected");
     };
 
+    //function that checks if box is selected and updates the song array with result
+    let isDeselected = (space) => {
+        console.log(this);
+        if(isSelected == true) {
+            newSong.splice(space, 1, "blank");
+        } else {
+            newSong.splice(space, 1, firstLetter);
+        }
+    }
+
+
 
 
   if ( $(this).hasClass( "first" ) == true ) {
-    newSong.splice(0, 1, firstLetter);
+   // newSong.splice(0, 1, firstLetter);
+   isDeselected(0);
     } else if ( $(this).hasClass( "second" ) == true ) {
-        newSong.splice(1, 1, firstLetter);
+    //    newSong.splice(1, 1, firstLetter);
+    isDeselected(1);
     } else if ( $(this).hasClass( "third" ) == true ) {
-        newSong.splice(2, 1, firstLetter);
-
+    //    newSong.splice(2, 1, firstLetter);
+    isDeselected(2);
     } else if ( $(this).hasClass( "fourth" ) == true ) {
-        newSong.splice(3, 1, firstLetter);
+    //   newSong.splice(3, 1, firstLetter);
+    isDeselected(3);
     } else if ( $(this).hasClass( "fifth" ) == true ) {
-        newSong.splice(4, 1, firstLetter);
+    //    newSong.splice(4, 1, firstLetter);
+    isDeselected(4);
     } else if ( $(this).hasClass( "sixth" ) == true ) {
-        newSong.splice(5, 1, firstLetter);
+    //    newSong.splice(5, 1, firstLetter);
+    isDeselected(5);
     } else if ( $(this).hasClass( "seventh" ) == true ) {
-        newSong.splice(6, 1, firstLetter);
+    //    newSong.splice(6, 1, firstLetter);
+    isDeselected(6);
     } else if ( $(this).hasClass( "eighth" ) == true ) {
-        newSong.splice(7, 1, firstLetter);
+    //  newSong.splice(7, 1, firstLetter);
+    isDeselected(7);
     }
+
 
   });
 
@@ -424,6 +443,7 @@ $(".keyboard-button").click(function(){
   $(".music-creation-play-button").click(function(){ 
 
     let playedAudio = newSong;
+    console.log(playedAudio);
     
     const result = playedAudio.filter(x => x !== 'blank');
     
