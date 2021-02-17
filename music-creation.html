@@ -44,9 +44,14 @@
 
         <!-- Sound Creation Options Section -->
         <div class="soundOptionsSection flexCenter">
-            <input class="recordImg" type="image" id="record_selected" alt="Record A Sound" src="images/record_unselected.png">
-            <input class="makeImg" type="image" id="make_selected" alt="Make A Song" src="images/make_unselected.png">
-            <input class="songsImg" type="image" id="songs_selected" alt="Send A Song" src="images/songs_unselected.png">
+            <input class="recordImg" type="image" id="record_selected" alt="Record A Sound" src="images/record_unselected.png" onclick="getRecordDiv()">
+            <input class="makeImg" type="image" id="make_selected" alt="Make A Song" src="images/make_unselected.png" onclick="getMusicMakingDiv()">
+            <input class="songsImg" type="image" id="songs_selected" alt="Send A Song" src="images/songs_unselected.png" onclick="getSongDiv()">
+        </div>
+        <!-- Record Selection Section -->
+        <div id="recordDivMain">
+ 
+
         </div>
 
         <!-- Songs Selection Section -->
@@ -96,7 +101,7 @@
         </figure>
 
         <!-- Review Submit Section -->
-        <div class="reviewMusicSubmit center">
+        <div class="reviewMusicSubmit center" id="musicMakingDivMain">
             <!-- <div class="soundBar flexCenter"></div> -->
             <div class="flexCenter">
                 <img src="images/backToBeginning.png"/>

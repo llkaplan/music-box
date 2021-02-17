@@ -1,5 +1,39 @@
 // MUSIC-CREATION.HTML ///////////////////////////////
 
+//Changes whats displayed in main section
+var recordDiv = document.getElementById("recordDivMain");
+var songDiv = document.getElementById("songDivMain");
+var musicMakeDiv = document.getElementById("musicMakingDivMain");
+
+function getRecordDiv() {
+    if (recordDiv.style.display === "none") {
+      recordDiv.style.display = "block";
+      songDiv.style.display = "none";
+      musicMakeDiv.style.display = "none";
+    } else {
+      recordDiv.style.display = "none";
+    }
+  }
+
+  function getSongDiv() {
+    if (songDiv.style.display === "none") {
+        songDiv.style.display = "flex";
+      recordDiv.style.display = "none";
+      musicMakeDiv.style.display = "none";
+    } else {
+      songDiv.style.display = "none";
+    }
+  }
+  function getMusicMakingDiv() {
+    if (musicMakeDiv.style.display === "none") {
+        musicMakeDiv.style.display = "block";
+        songDiv.style.display = "none";
+      recordDiv.style.display = "none";
+    } else {
+      songDiv.style.display = "none";
+    }
+  }
+
 // const { selectors } = require("sizzle");
 
 // Hover Image Change for the Sound Options Section
@@ -407,9 +441,6 @@ $(".keyboard-button").click(function(){
         }
     }
 
-
-
-
   if ( $(this).hasClass( "first" ) == true ) {
    // newSong.splice(0, 1, firstLetter);
    isDeselected(0);
@@ -444,8 +475,6 @@ $(".keyboard-button").click(function(){
 
     let playedAudio = newSong;
     console.log(playedAudio);
-    
-    const result = playedAudio.filter(x => x !== 'blank');
     
 
 
