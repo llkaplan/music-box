@@ -17,7 +17,7 @@ function getRecordDiv() {
 
   function getSongDiv() {
     if (songDiv.style.display === "none") {
-        songDiv.style.display = "flex";
+        songDiv.style.display = "block";
       recordDiv.style.display = "none";
       musicMakeDiv.style.display = "none";
     } else {
