@@ -22,6 +22,7 @@ function setup() {
 // CREATES THE RECORD FUNCTION
 function recRecordButton() {
     if (state === 0) {
+        userStartAudio();
         recorder.record(soundFile);
         console.log("pressed record button");
         console.log(state);
