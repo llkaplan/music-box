@@ -126,7 +126,7 @@ var songs = ["Super Mario 64", "Jingle Bells", "Star Wars", "Happy Birthday", "C
 var songDivs = ["#songDiv0", "#songDiv1", "#songDiv2", "#songDiv3", "#songDiv4"];
 var divClass = ["song0", "song1", "song2", "song3", "song4"];
 var songImgCode = ['images/song_plug.png', 'images/song_bass.png', 'images/song_keys.png', 'images/song_party.png', 'images/song_bass.png'];
-var songSoundFile = ['sounds/clairDeLune.mp3', 'sounds/starWarsMainTheme.mp3', 'sounds/superMarioBros.mp3', 'sounds/starWarsMainTheme.mp3', 'sounds/superMarioBros.mp3'];
+var songSoundFile = ['sounds/superMarioBros.mp3', 'sounds/jingle_bells.mp3', 'sounds/starWarsMainTheme.mp3',  'sounds/happy_birthday.mp3', 'sounds/clairDeLune.mp3'];
 var currentSelectedSong = 2;
 const currentSong = ["c1", "d1", "e1", "f1", "g1", "a1", "b1", "c1"];
 
@@ -185,13 +185,16 @@ function createMiddleSongDiv(i, stationaryDiv) {
   $( songDivIds ).removeClass();
   $( songDivIds ).addClass( theDivClass );
 
+  updateSongInPlayer(i);
+
   currentSelectedSong = i;
   console.log(currentSelectedSong);
 }
 
-function updateSongInPlayer(soundFile) {
-    $( "#audioPlayer" ).attr("src", soundFile);
-    console.log("replaced song" + soundFile);
+function updateSongInPlayer(i) {
+    var song = songSoundFile[i];
+    $( "#audioPlayer" ).attr("src", song);
+    console.log("replaced song " + song);
 }
 
 // Puts DIVs in their Positions
