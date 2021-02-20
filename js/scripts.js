@@ -12,9 +12,8 @@ function getRecordDiv() {
        $(".recordImgDot").css("display", "block");
        $(".makeImgDot").css("display", "none");
        $(".songsImgDot").css("display", "none");
-       recordCircle.style.display = "block";
-       songDiv.style.display = "none";
-       musicMakeDiv.style.display = "none";
+       $("#songDivMain").css("display", "none");
+       $("#musicMakingDivMain").css("display", "none");
  
     /* } else {
       recordDiv.style.display = "none";
