@@ -49,68 +49,78 @@
         </div>
 
         <!-- Record Selection Section -->
-        <div id="recordDivMain">
-
-            <div class="record01">
-                <img id="rec_recordButton" src="images/recordButton.png">
+        <div id="recordDivMain" class="center recordDivMain">
+            <h2>Record a message</h2>
+            <div class="flexCenter">
+                <div class="record01">
+                    <img id="rec_recordButton" class="rec_buttons" src="images/recordButton.png">
+                </div>
+                <div class="record02">
+                    <img id="rec_playButton" class="rec_buttons" src="images/smallPlayButton50percent.png">
+                </div>
+                <div class="record03">
+                    <img id="rec_stopButton" class="rec_buttons" src="images/smStopButton50percent.png">
+                </div>
+                <div class="record04">
+                    <img id="rec_clearRecording" class="rec_buttons" src="images/trashButton50percent.png">
+                </div>
             </div>
-            <div class="record02">
-                <img id="rec_playButton" src="images/smallPlayButton50percent.png">
-            </div>
-            <div class="record03">
-                <img id="rec_stopButton" src="images/smStopButton50percent.png">
-            </div>
-            <div class="record04">
-                <img id="rec_clearRecording" src="images/trashButton50percent.png">
-            </div>
-
+            <button id="sendToBoxButton" class="sendToBoxButton">Send to Mom's Music Box</button>
         </div>
 
         <!-- Songs Selection Section -->
-        <div id="songDivMain" class="songsSelection flexCenter">
-            <div class="rightSongArrow navArrow center">
-                <img src="images/left_arrow.png">
-            </div>
-            <div class="songsUnselected center">
-                <div class="song0" id="songDiv0">
-                    <img src="images/song_plug.png">
-                    <p>Super Mario 64</p>
+        <div id="songDivMain" class="songsSelection center">
+            <h2 style="margin-bottom: 30px;">Send a song</h2>
+            <div class="flexCenter">
+                <div class="rightSongArrow navArrow center">
+                    <img src="images/left_arrow.png">
+                </div>
+                <div class="songsUnselected center">
+                    <div class="song0" id="songDiv0">
+                        <img src="images/song_plug.png">
+                        <p>Super Mario 64</p>
+                    </div>
+                </div>
+                <div class="songsUnselected center">
+                    <div class="song1" id="songDiv1">
+                        <img src="images/song_bass.png">
+                        <p>Jingle Bells</p>
+                    </div>
+                </div>
+                <div class="songSelected center flexCenter">
+                    <div class="song2" id="songDiv2" style="position: relative;">
+                        <img src="images/song_keys.png">
+                        <p class="bold largerText">Star Wars</p>
+                    </div>
+                </div>
+                <div class="songsUnselected center">
+                    <div class="song3" id="songDiv3">
+                        <img src="images/song_party.png">
+                        <p>Happy Birthday</p>
+                    </div>
+                </div>
+                <div class="songsUnselected center">
+                    <div class="song4" id="songDiv4">
+                        <img src="images/song_bass.png">
+                        <p>Clair de Lune</p>
+                    </div>
+                </div>
+                <div class="leftSongArrow navArrow">
+                    <!-- make these image buttons all of these -->
+                    <img src="images/right_arrow.png">
                 </div>
             </div>
-            <div class="songsUnselected center">
-                <div class="song1" id="songDiv1">
-                    <img src="images/song_bass.png">
-                    <p>Jingle Bells</p>
-                </div>
-            </div>
-            <div class="songSelected center flexCenter">
-                <div class="song2" id="songDiv2" style="position: relative;">
-                    <img src="images/song_keys.png">
-                    <p class="bold largerText">Star Wars</p>
-                </div>
-            </div>
-            <div class="songsUnselected center">
-                <div class="song3" id="songDiv3">
-                    <img src="images/song_party.png">
-                    <p>Happy Birthday</p>
-                </div>
-            </div>
-            <div class="songsUnselected center">
-                <div class="song4" id="songDiv4">
-                    <img src="images/song_bass.png">
-                    <p>Clair de Lune</p>
-                </div>
-            </div>
-            <div class="leftSongArrow navArrow">
-                <!-- make these image buttons all of these -->
-                <img src="images/right_arrow.png">
-            </div>
+
+            <figure style="margin-top: 30px; margin-bottom: 26px;" class="center">
+                <audio id="audioPlayer" controls src="sounds/starWarsMainTheme.mp3"> Your browser does not support the <code>audio</code> element.
+                </audio>
+            </figure>
+
+            <button id="sendToBoxButton" class="sendToBoxButton">Send to Mom's Music Box</button>
+
         </div>
 
-        <figure style="margin-top: 0px;" class="center">
-            <audio id="audioPlayer" controls src="sounds/starWarsMainTheme.mp3"> Your browser does not support the <code>audio</code> element.
-            </audio>
-        </figure>
+
 
         <!-- Review Submit Section -->
         <div class="reviewMusicSubmit center" id="musicMakingDivMain">

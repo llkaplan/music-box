@@ -226,3 +226,27 @@ div.songSelected {
     box-sizing: border-box;
     border-radius: 60px;
 }
+
+div#songDivMain {
+    border: 2px solid #FFF;
+    border-radius: 8px;
+    padding-top: 24px;
+    padding-bottom: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* SOUND RECORDING DIV MAIN STYLES */
+div.recordDivMain {
+    border: 2px solid #FFF;
+    border-radius: 8px;
+    padding-top: 24px;
+    padding-bottom: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+img.rec_buttons {
+    margin: 10px;
+    margin-bottom: 26px;
+}
