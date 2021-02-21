@@ -5,35 +5,45 @@ var recordDiv = document.getElementById("recordDivMain");
 var songDiv = document.getElementById("songDivMain");
 var musicMakeDiv = document.getElementById("musicMakingDivMain");
 
+
 function getRecordDiv() {
-    if (recordDiv.style.display === "none") {
-      recordDiv.style.display = "block";
-      songDiv.style.display = "none";
-      musicMakeDiv.style.display = "none";
-    } else {
+  //   if (recordDiv.style.display === "none") {
+       recordDiv.style.display = "block";
+       $(".recordImgDot").css("display", "block");
+       $(".makeImgDot").css("display", "none");
+       $(".songsImgDot").css("display", "none");
+       $("#songDivMain").css("display", "none");
+       $("#musicMakingDivMain").css("display", "none");
+ 
+    /* } else {
       recordDiv.style.display = "none";
-    }
-  }
-
-  function getSongDiv() {
-    if (songDiv.style.display === "none") {
-        songDiv.style.display = "block";
-      recordDiv.style.display = "none";
-      musicMakeDiv.style.display = "none";
-    } else {
-      songDiv.style.display = "none";
-    }
-  }
-  function getMusicMakingDiv() {
-    if (musicMakeDiv.style.display === "none") {
-        musicMakeDiv.style.display = "block";
-        songDiv.style.display = "none";
-      recordDiv.style.display = "none";
-    } else {
-      songDiv.style.display = "none";
-    }
-  }
-
+     } */
+   }
+ 
+   function getSongDiv() {
+    // if (songDiv.style.display === "none") {
+       songDiv.style.display = "block";
+       $(".recordImgDot").css("display", "none");
+       $(".makeImgDot").css("display", "none");
+       $(".songsImgDot").css("display", "block");
+       recordDiv.style.display = "none";
+       musicMakeDiv.style.display = "none";
+    /* } else {
+       songDiv.style.display = "none";
+     } */
+   }
+   function getMusicMakingDiv() {
+     //if (musicMakeDiv.style.display === "none") {
+         musicMakeDiv.style.display = "block";
+         $(".recordImgDot").css("display", "none");
+         $(".makeImgDot").css("display", "block");
+         $(".songsImgDot").css("display", "none");
+         songDiv.style.display = "none";
+         recordDiv.style.display = "none";
+    /* } else {
+       songDiv.style.display = "none";
+     } */
+   }
 // const { selectors } = require("sizzle");
 
 // Hover Image Change for the Sound Options Section

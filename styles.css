@@ -166,9 +166,55 @@ div.flexCenter {
 
 .recordImg, .songsImg {
     position: relative;
-    top: -40px;
-    margin: 24px;
+ /*   top: -40px; */
+ /*   margin: 24px; */
+    z-index: 5;
+    position: relative;
 }
+
+.button-box {
+    width: 150px;
+    height: 150px;
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+}
+
+.button-bg-dot {
+    height: 155px;
+    width: 155px;
+    background-color: rgb(143, 209, 0, .01);
+    box-shadow:
+    0 0 10px 10px rgb(255, 255, 255, .3),  /* inner white */
+    0 0 20px 20px rgb(255, 0, 255, .3); /* middle magenta */
+    backdrop-filter: blur(20px);
+    border-radius: 50%;
+    z-index: -3;
+    position: absolute;
+  }
+
+ .makeImg {
+     z-index: 2;
+     position: absolute;
+ }
+ .recordImg {
+    z-index: 2;
+    position: absolute;
+}
+.songsImg {
+    z-index: 2;
+    position: absolute;
+}
+
+.button-box-center {
+    margin-top: 100px;
+}
+
+.recordImgDot, .songsImgDot {
+    display: none;
+}
+
 
 /* Review Music and Submit Section */
 
