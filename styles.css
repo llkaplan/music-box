@@ -28,6 +28,10 @@ p.bold {
     justify-content: center;
 }
 
+.handcursor {
+    cursor: pointer;
+}
+
 .headerIcon {
     width: 50px;
     padding-right: 10px;
@@ -50,7 +54,8 @@ p.bold {
 }
 
 header {
-    max-width: 1200px;
+    max-width: 1028px;
+    padding-left: 20px;
     margin: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -60,7 +65,8 @@ header {
 }
 
 .mainSection {
-    max-width: 1200px;
+    max-width: 1028px;
+    padding-left: 20px;
     margin-left: auto;
     margin-right: auto;
 }
