@@ -124,7 +124,7 @@ $( "#sendToBox" )
         $( "select option:selected" ).each(function() {
         str += $( this ).text() + " ";
         });
-        $( "#sendToBoxButton" ).text( "Send To " + str );
+        $( ".sendToBoxButton" ).text( "Send To " + str );
     })
 .change();
 
@@ -485,21 +485,59 @@ $(".keyboard-button").click(function(){
 
   //adding in the music notes to the array to create song.
   $(".music-creation-play-button").click(function(){ 
-
     let playedAudio = newSong;
     console.log(playedAudio);
     
-
-
   });
 
-$("#sendToBoxButton").click(function() {
+
+// SEND TO BOX BUTTON SCRIPTS
+$("#sendToBoxButtonMake").click(function() {
   console.log(firebase);
   firebase.database().ref('song').set({
     notes: currentSong,
   });
-})
+});
+
+// send to box button for record
+function recSuccessCelebration() {
+    document.getElementById("recDiv0").style.opacity = "0";
+    document.getElementById("recDiv1").style.opacity = "0";
+    document.getElementById("sendToBoxButtonRec").style.opacity = "0";
+    $(".recordDivMain").css("background-image", "url('images/successImage.png')");
+    $(".recordDivMain").css("background-position", "center");
+    $(".recordDivMain").css("background-repeat", "no-repeat");
+    $(".recordDivMain").css("background-size", "initial");
+};
+
+$("#sendToBoxButtonRec").click(function() {
+    recSuccessCelebration();
+});
+
+// Send to box button for songs
+function recSuccessCelebrationSong() {
+    document.getElementById("songSucDiv0").style.opacity = "0";
+    document.getElementById("songSucDiv1").style.opacity = "0";
+    document.getElementById("songSucDiv2").style.opacity = "0";
+    document.getElementById("sendToBoxButtonSong").style.opacity = "0";
+    $("#songDivMain").css("background-image", "url('images/successImgSong.png')");
+    $("#songDivMain").css("background-position", "center");
+    $("#songDivMain").css("background-repeat", "no-repeat");
+    $("#songDivMain").css("background-size", "initial");
+};
+
+$("#sendToBoxButtonSong").click(function() {
+    recSuccessCelebrationSong();
+});
 
 
+// Button for Make / Keyboard Success
+function makeSuccessButton() {
+    $("#makeButtonText").replaceWith("<span style='color:white;'>Song has been sent!</span>");
+    $("#sendToBoxButtonMake").css("background", "#8ED000");
+};
 
-// TRASH ////////////////////////////////
+$("#sendToBoxButtonMake").click(function() {
+    makeSuccessButton();
+});
+

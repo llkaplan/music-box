@@ -141,7 +141,7 @@ div.boxSelection {
 select#sendToBox {
     height: 60px;
     width: 100%;
-    background: #8ED000;
+    background: linear-gradient(90.21deg, #C233FF 2.25%, #742BD0 97.49%);
     border: 3px solid #FFFFFF;
     box-sizing: border-box;
     border-radius: 8px;
@@ -248,6 +248,10 @@ button.sendToBox {
     width: 80%;
 }
 
+.sendToBoxButton {
+    background: linear-gradient(90.21deg, #C233FF 2.25%, #742BD0 97.49%);
+}
+
 /* Songs Selection Section ///////////////////////////////////////// */
 
 div.songsSelection {
@@ -297,6 +301,10 @@ div.recordDivMain {
     padding-bottom: 50px;
     margin-top: 50px;
     margin-bottom: 50px;
+    /* background-image: url("images/successImage.png"); 
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: initial; */
 }
 
 img.rec_buttons {

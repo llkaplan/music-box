@@ -59,8 +59,8 @@
 
         <!-- Record Selection Section -->
         <div id="recordDivMain" class="center recordDivMain">
-            <h2>Record a message</h2>
-            <div class="flexCenter">
+            <h2 id="recDiv0">Record a message</h2>
+            <div id="recDiv1" class="flexCenter">
                 <div class="record01">
                     <img id="rec_recordButton" class="rec_buttons handcursor" src="images/recordButton.png">
                 </div>
@@ -74,13 +74,23 @@
                     <img id="rec_clearRecording" class="rec_buttons handcursor" src="images/trashButton50percent.png">
                 </div>
             </div>
-            <button id="sendToBoxButton" class="handcursor sendToBoxButton">Send to Mom's Music Box</button>
+
+            <button id="sendToBoxButtonRec" class="handcursor sendToBoxButton">Send to Mom's Music Box</button>
+<!-- 
+            <div style="height: 300px;" class="center">
+                <div class="flexCenter">
+                    <img style="width: 100px;" src="images/celebration.png">
+                </div>
+                <h2 class="center">Success! Your recorded message has been sent!</h2>
+            </div> -->
+
+
         </div>
 
         <!-- Songs Selection Section -->
         <div id="songDivMain" class="songsSelection center">
-            <h2 style="margin-bottom: 30px;">Send a song</h2>
-            <div class="flexCenter">
+            <h2 id="songSucDiv0" style="margin-bottom: 30px;">Send a song</h2>
+            <div id="songSucDiv1" class="flexCenter">
                 <div class="rightSongArrow navArrow center">
                     <img class="handcursor" src="images/left_arrow.png">
                 </div>
@@ -120,12 +130,12 @@
                 </div>
             </div>
 
-            <figure style="margin-top: 30px; margin-bottom: 26px;" class="center">
+            <figure id="songSucDiv2" style="margin-top: 30px; margin-bottom: 26px;" class="center">
                 <audio id="audioPlayer" controls src="sounds/starWarsMainTheme.mp3"> Your browser does not support the <code>audio</code> element.
                 </audio>
             </figure>
 
-            <button id="sendToBoxButton" class="handcursor sendToBoxButton">Send to Mom's Music Box</button>
+            <button id="sendToBoxButtonSong" class="handcursor sendToBoxButton">Send to Mom's Music Box</button>
 
         </div>
 
@@ -134,11 +144,6 @@
         <!-- Review Submit Section -->
         <div class="reviewMusicSubmit center" id="musicMakingDivMain">
             <!-- <div class="soundBar flexCenter"></div> -->
-            <div class="flexCenter">
-                <img src="images/backToBeginning.png"/>
-                <img src="images/playLarge.png" class="music-creation-play-button"/>
-                <img src="images/pauseLarge.png"/><br>
-            </div> 
             <div class="keyboard">
                 <div class="C-scale">
                     <button type="button" class="c1 keyboard-button first"></button>
@@ -222,6 +227,12 @@
                 </div>
             </div>
 
+            <div class="flexCenter">
+                <img src="images/backToBeginning.png"/>
+                <img src="images/playLarge.png" class="music-creation-play-button"/>
+                <img src="images/pauseLarge.png"/><br>
+            </div> 
+
  <!-- Audio files for notes -->
             <audio id="cNote" src="sounds/notes/C.mp3"></audio>
             <audio id="dNote" src="sounds/notes/D.mp3"></audio>
@@ -231,7 +242,7 @@
             <audio id="aNote" src="sounds/notes/A.mp3"></audio>
             <audio id="bNote" src="sounds/notes/B.mp3"></audio>
 
-            <button id="sendToBoxButton" class="handcursor sendToBoxButton">Send to Mom's Music Box</button>
+            <button id="sendToBoxButtonMake" class="handcursor sendToBoxButton"><span id="makeButtonText">Send to Mom's Music Box</span></button>
         </div>
     </div>
 
