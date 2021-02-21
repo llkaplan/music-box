@@ -534,6 +534,7 @@ $("#sendToBoxButtonSong").click(function() {
 // Button for Make / Keyboard Success
 function makeSuccessButton() {
     $("#makeButtonText").replaceWith("<span style='color:white;'>Song has been sent!</span>");
+    $( "#sendToBoxButtonMake" ).text("Song has been sent!");
     $("#sendToBoxButtonMake").css("background", "#8ED000");
 };
 
