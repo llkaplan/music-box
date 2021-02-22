@@ -1,4 +1,4 @@
-let mic, recorder, soundFile;
+let mic, recorder, soundFile, soundLoop, synth;
 
 let state = 0; // mousePress will increment from Record, to Stop, to Play
 
@@ -16,6 +16,14 @@ function setup() {
 
   // create an empty sound file that we will use to playback the recording
   soundFile = new p5.SoundFile();
+
+   //the looper's callback is passed the timeFromNow
+   //this value should be used as a reference point from
+   //which to schedule sounds
+   let intervalInSeconds = 0.2;
+   soundLoop = new p5.SoundLoop(onSoundLoop, intervalInSeconds);
+
+   synth = new p5.MonoSynth();
 }
 
 
@@ -92,7 +100,36 @@ function recClearButton() {
     }
 }
 
+function onSoundLoop(timeFromNow) {
+    let noteIndex = (soundLoop.iterations - 1) % newSong.length;
+
+    let note = newSong[noteIndex];
+
+    if (note !== "blank") {
+        // note = midiToFreq(newSong[noteIndex]);
+        synth.play(note, 0.5, timeFromNow);    
+    }
+}
+
+function playNote(note) {
+    console.log(note);
+    userStartAudio();
+    synth.play(note, 0.5);    
+}
+  
 // Clear function on Click
 $( "#rec_clearRecording" ).on("click", function() {
     recClearButton();
 })
+
+//adding in the music notes to the array to create song.
+$(".music-creation-play-button").on("click", function(){  
+    userStartAudio();
+
+    if (soundLoop.isPlaying) {
+      soundLoop.stop();
+    } else {
+      // start the loop
+      soundLoop.start();
+    }
+  });

@@ -138,7 +138,6 @@ var divClass = ["song0", "song1", "song2", "song3", "song4"];
 var songImgCode = ['images/song_plug.png', 'images/song_bass.png', 'images/song_keys.png', 'images/song_party.png', 'images/song_bass.png'];
 var songSoundFile = ['sounds/superMarioBros.mp3', 'sounds/jingle_bells.mp3', 'sounds/starWarsMainTheme.mp3',  'sounds/happy_birthday.mp3', 'sounds/clairDeLune.mp3'];
 var currentSelectedSong = 2;
-const currentSong = ["c1", "d1", "e1", "f1", "g1", "a1", "b1", "c1"];
 
 function getSongName(song) {
     if (song == songs[0]) {
@@ -357,7 +356,8 @@ function getSongImage(song) {
 //NEED TO GET ANOTHER 2ND C NOTE IT"S WRONG
 let parentClass;
 let noteAudio;
-let newSong = ['blank', 'blank', 'blank', 'blank', 'blank', 'blank', 'blank', 'blank'];
+
+let newSong = ['C4', 'D4', 'E4', 'blank', 'G4', 'A5', 'B5', 'C5'];
 //Changes colors of buttons and selects sound
 
 $(".keyboard-button").click(function(){
@@ -394,18 +394,14 @@ $(".keyboard-button").click(function(){
         $(".eighth").css("background-color","rgba(255, 255, 255, 0.3)");
     }
     
-
-
-    //allSelected.forEach(element => console.log(element))
-
-
     if(isSelected == true) {
       $(this).removeClass("selected");
       this.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
     }  else if (parentClass == "C-scale") {
         this.style.backgroundColor = "#266DD3";
         var noteAudio = document.getElementById("cNote");
-        noteAudio.play();
+        // TODO: Pass in real note
+        playNote('C4');
         $(this).addClass("selected");
     } else if (parentClass == "D-scale") {
         this.style.backgroundColor = "#C5DCA0";
@@ -479,23 +475,15 @@ $(".keyboard-button").click(function(){
     //  newSong.splice(7, 1, firstLetter);
     isDeselected(7);
     }
-
-
   });
 
-  //adding in the music notes to the array to create song.
-  $(".music-creation-play-button").click(function(){ 
-    let playedAudio = newSong;
-    console.log(playedAudio);
-    
-  });
 
 
 // SEND TO BOX BUTTON SCRIPTS
 $("#sendToBoxButtonMake").click(function() {
   console.log(firebase);
   firebase.database().ref('song').set({
-    notes: currentSong,
+    notes: newSong,
   });
 });
 
