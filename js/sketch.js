@@ -125,11 +125,16 @@ $( "#rec_clearRecording" ).on("click", function() {
 //adding in the music notes to the array to create song.
 $(".music-creation-play-button").on("click", function(){  
     userStartAudio();
+    console.log(this);
+    
 
     if (soundLoop.isPlaying) {
       soundLoop.stop();
+      $(this).attr('src','images/play.png');
+      
     } else {
       // start the loop
       soundLoop.start();
+      $(this).attr('src','images/pauseLarge.png');
     }
   });

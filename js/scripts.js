@@ -357,7 +357,7 @@ function getSongImage(song) {
 let parentClass;
 let noteAudio;
 
-let newSong = ['C4', 'D4', 'E4', 'blank', 'G4', 'A5', 'B5', 'C5'];
+let newSong = ['blank', 'blank', 'blank', 'blank', 'blank', 'blank', 'blank', 'blank'];
 //Changes colors of buttons and selects sound
 
 $(".keyboard-button").click(function(){
@@ -406,74 +406,81 @@ $(".keyboard-button").click(function(){
     } else if (parentClass == "D-scale") {
         this.style.backgroundColor = "#C5DCA0";
         var noteAudio = document.getElementById("dNote");
-        noteAudio.play();
+        playNote('D4');
+        //noteAudio.play();
         $(this).addClass("selected");
     } else if (parentClass == "E-scale") {
         this.style.backgroundColor = "#F5F2B8";
         var noteAudio = document.getElementById("eNote");
-        noteAudio.play();
+        //noteAudio.play();
+        playNote('E4');
         $(this).addClass("selected");
     } else if (parentClass == "F-scale") {
         this.style.backgroundColor = "#EF6F6C";
         var noteAudio = document.getElementById("fNote");
-        noteAudio.play();
+        //noteAudio.play();
+        playNote('F4');
         $(this).addClass("selected");
     } else if (parentClass == "G-scale") {
         this.style.backgroundColor = "#FFA770";
         var noteAudio = document.getElementById("gNote");
-        noteAudio.play();
+        //noteAudio.play();
+        playNote('G4');
         $(this).addClass("selected");
     } else if (parentClass == "A-scale") {
         this.style.backgroundColor = "#820263";
         var noteAudio = document.getElementById("aNote");
-        noteAudio.play();
+        //noteAudio.play();
+        playNote('A4');
         $(this).addClass("selected");
     } else if (parentClass == "B-scale") {
         this.style.backgroundColor = "#FFAFD8";
         var noteAudio = document.getElementById("bNote");
-        noteAudio.play();
+       // noteAudio.play();
+        playNote('B4');
         $(this).addClass("selected");
     } else if (parentClass == "C-scale-2nd") {
         this.style.backgroundColor = "#06BEE1";
         var noteAudio = document.getElementById("cNote");
-        noteAudio.play();
+       // noteAudio.play();
+        playNote('C5');
         $(this).addClass("selected");
     };
 
     //function that checks if box is selected and updates the song array with result
-    let isDeselected = (space) => {
+    let isDeselected = (space, note) => {
         console.log(this);
         if(isSelected == true) {
             newSong.splice(space, 1, "blank");
         } else {
-            newSong.splice(space, 1, firstLetter);
+            newSong.splice(space, 1, note);
         }
     }
 
   if ( $(this).hasClass( "first" ) == true ) {
-   // newSong.splice(0, 1, firstLetter);
-   isDeselected(0);
+    newSong.splice(0, 1, 'C4');
+   isDeselected(0, 'C4');
     } else if ( $(this).hasClass( "second" ) == true ) {
-    //    newSong.splice(1, 1, firstLetter);
-    isDeselected(1);
+        newSong.splice(1, 1, 'D4');
+    isDeselected(1, 'D4');
     } else if ( $(this).hasClass( "third" ) == true ) {
-    //    newSong.splice(2, 1, firstLetter);
-    isDeselected(2);
+        newSong.splice(2, 1, 'E4');
+    isDeselected(2, 'E4');
     } else if ( $(this).hasClass( "fourth" ) == true ) {
-    //   newSong.splice(3, 1, firstLetter);
-    isDeselected(3);
+       newSong.splice(3, 1, 'F4');
+    isDeselected(3, 'F4');
     } else if ( $(this).hasClass( "fifth" ) == true ) {
-    //    newSong.splice(4, 1, firstLetter);
-    isDeselected(4);
+        newSong.splice(4, 1, 'G4');
+    isDeselected(4, 'G4');
     } else if ( $(this).hasClass( "sixth" ) == true ) {
-    //    newSong.splice(5, 1, firstLetter);
-    isDeselected(5);
+        newSong.splice(5, 1, 'A4');
+    isDeselected(5, 'A4');
     } else if ( $(this).hasClass( "seventh" ) == true ) {
-    //    newSong.splice(6, 1, firstLetter);
-    isDeselected(6);
+       newSong.splice(6, 1, 'B4');
+    isDeselected(6, 'B4');
     } else if ( $(this).hasClass( "eighth" ) == true ) {
-    //  newSong.splice(7, 1, firstLetter);
-    isDeselected(7);
+      newSong.splice(7, 1, 'C5');
+    isDeselected(7, 'C5');
     }
   });
 
