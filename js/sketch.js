@@ -112,7 +112,7 @@ function onSoundLoop(timeFromNow) {
 }
 
 function playNote(note) {
-    console.log(note);
+ //   console.log(note);
     userStartAudio();
     synth.play(note, 0.5);    
 }
@@ -125,7 +125,6 @@ $( "#rec_clearRecording" ).on("click", function() {
 //adding in the music notes to the array to create song.
 $(".music-creation-play-button").on("click", function(){  
     userStartAudio();
-    console.log(this);
     
 
     if (soundLoop.isPlaying) {
